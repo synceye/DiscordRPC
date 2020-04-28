@@ -4,5 +4,5 @@ A simple Rich Presence customised and open source for your FiveM and LiteM serve
 # GNU LICENCA
 Ovaj program je 'free of use' i možete ga forkati, a inače sve kopije će biti sankcionirane
 
-# Discord id
+# Discord ID
 Moj discord tag je: sync.eye#2817

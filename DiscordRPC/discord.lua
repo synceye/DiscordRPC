@@ -14,6 +14,4 @@ Citizen.CreateThread(function()
         SetDiscordRichPresenceAssetSmall("VASA_SLIKA") <-- Ona sitna, mala slika na RPC
         SetDiscordRichPresenceAssetSmallText("therapyblkn.ddns.net") <-- Tekst koji ocete staviti
     end
-
-
 end)

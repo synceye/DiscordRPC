@@ -12,6 +12,6 @@ Citizen.CreateThread(function()
         SetDiscordRichPresenceAssetText(GetPlayerName(PlayerId())) <-- ovo tu prikazuje ime igraca prema idu, koji je spojen na steam njihov. U isto vrijeme je to tekst koji je za veliku sliku
 
         SetDiscordRichPresenceAssetSmall("VASA_SLIKA") <-- Ona sitna, mala slika na RPC
-        SetDiscordRichPresenceAssetSmallText("therapyblkn.ddns.net") <-- Tekst koji ocete staviti
+        SetDiscordRichPresenceAssetSmallText(#players .. "/32") <-- Tekst koji ocete staviti
     end
 end)

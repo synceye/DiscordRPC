@@ -1,7 +1,7 @@
 Citizen.CreateThread(function()
     while true do
         local player = GetPlayerPed(-1)
-        Citizen.Wait(6*1000)
+        Citizen.Wait(6*1000) <--- NEMOJTE BITI KO HIDDEN I ABUSEATI DISCORD API, NEMOJTE ICI ISPOD 6!!
 
         SetDiscordAppId() -- U OVE ZAGRADE STAVITE CLIENT ID OD VAŠEG DISCORD RPCa BEZ NAVODNIKA (AKO NE ZNATE ŠTO JE TO IMATE NA GOOGLE SVE, NAPISITE DISCORD DEVELOPER TUTORIAL BOT ILI TAKO NESTO)
         -- Molim da se ostavi ova markirana poruka jer ipak sam je ja napravio ;) !

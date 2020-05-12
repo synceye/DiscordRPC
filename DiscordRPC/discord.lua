@@ -1,17 +1,25 @@
 Citizen.CreateThread(function()
     while true do
-        local player = GetPlayerPed(-1)
-        Citizen.Wait(6*1000) <--- NEMOJTE BITI KO HIDDEN I ABUSEATI DISCORD API, NEMOJTE ICI ISPOD 6!!
+        local ime = GetPlayerPed(-1)
+        local nalaziste = " je na " .. GetStreetNameFromHashKey(GetStreetNameAtCoord(table.unpack(GetEntityCoords(ime))))
+        local igracbrzina = math.floor((GetEntitySpeed(GetVehiclePedIsIn(GetPlayerPed(-1), false))*3.6)) .. " KM/h"
+        Citizen.Wait(3*1000)
 
-        SetDiscordAppId() -- U OVE ZAGRADE STAVITE CLIENT ID OD VAŠEG DISCORD RPCa BEZ NAVODNIKA (AKO NE ZNATE ŠTO JE TO IMATE NA GOOGLE SVE, NAPISITE DISCORD DEVELOPER TUTORIAL BOT ILI TAKO NESTO)
-        -- Molim da se ostavi ova markirana poruka jer ipak sam je ja napravio ;) !
-        --SetRichPresence("ID: " .. GetPlayerServerId(NetworkGetEntityOwner(GetPlayerPed(-1)))  | "Lokacija: " .. GetStreetNameFromHashKey(GetStreetNameAtCoord(table.unpack(GetEntityCoords(player))))) -- Stari kod <---
-        SetRichPresence("ID: " .. GetPlayerServerId(NetworkGetEntityOwner(GetPlayerPed(-1))) .. " | " .. GetPlayerName(PlayerId()) .. " je na ".. GetStreetNameFromHashKey(GetStreetNameAtCoord(table.unpack(GetEntityCoords(player))))) -- Novi kod <--- 
-                                   -- ^Prikazuje ID igraca^ --                                         -- ^Prikazuje id (nemojte dirati)^         ^Prikazuje lokaciju gdje se nalazi taj lik, updatea se svaki put kada negdje dodje^
-        SetDiscordRichPresenceAsset("VASA_SLIKA") <-- Ona velika slika na RPC
-        SetDiscordRichPresenceAssetText(GetPlayerName(PlayerId())) <-- ovo tu prikazuje ime igraca prema idu, koji je spojen na steam njihov. U isto vrijeme je to tekst koji je za veliku sliku
+        if(IsPedInAnyVehicle(GetPlayerPed(-1), false)) then 
+            nalaziste = " vozi " .. igracbrzina
+        if igracbrzina == "0 KM/h" then nalaziste = " je u vozilu"
+            end
+        end
 
-        SetDiscordRichPresenceAssetSmall("VASA_SLIKA") <-- Ona sitna, mala slika na RPC
-        SetDiscordRichPresenceAssetSmallText(#players .. "/32") <-- Tekst koji ocete staviti
+        SetDiscordAppId(660063736765087744)
+        -- Sync je na IAP
+        --SetRichPresence("ID: " .. GetPlayerServerId(NetworkGetEntityOwner(GetPlayerPed(-1)))  | "Lokacija: " .. GetStreetNameFromHashKey(GetStreetNameAtCoord(table.unpack(GetEntityCoords(ime)))))
+        SetRichPresence("ID: " .. GetPlayerServerId(NetworkGetEntityOwner(GetPlayerPed(-1))) .. " | " .. GetPlayerName(PlayerId()) .. nalaziste )
+
+        SetDiscordRichPresenceAsset("imageeeee")
+        SetDiscordRichPresenceAssetText(GetPlayerName(PlayerId()))
+
+        SetDiscordRichPresenceAssetSmall("discord-logo-black_1_")
+        SetDiscordRichPresenceAssetSmallText("therapyblkn.ddns.net")
     end
 end)

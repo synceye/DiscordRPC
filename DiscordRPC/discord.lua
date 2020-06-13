@@ -11,15 +11,15 @@ Citizen.CreateThread(function()
             end
         end
 
-        SetDiscordAppId(660063736765087744)
+        SetDiscordAppId(UR DISCORD BOT ID)
         -- Sync je na IAP
         --SetRichPresence("ID: " .. GetPlayerServerId(NetworkGetEntityOwner(GetPlayerPed(-1)))  | "Lokacija: " .. GetStreetNameFromHashKey(GetStreetNameAtCoord(table.unpack(GetEntityCoords(ime)))))
         SetRichPresence("ID: " .. GetPlayerServerId(NetworkGetEntityOwner(GetPlayerPed(-1))) .. " | " .. GetPlayerName(PlayerId()) .. nalaziste )
 
-        SetDiscordRichPresenceAsset("imageeeee")
+        SetDiscordRichPresenceAsset("")
         SetDiscordRichPresenceAssetText(GetPlayerName(PlayerId()))
 
-        SetDiscordRichPresenceAssetSmall("discord-logo-black_1_")
-        SetDiscordRichPresenceAssetSmallText("therapyblkn.ddns.net")
+        SetDiscordRichPresenceAssetSmall("")
+        SetDiscordRichPresenceAssetSmallText("")
     end
 end)
